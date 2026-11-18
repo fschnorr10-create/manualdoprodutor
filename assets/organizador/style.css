@@ -1,0 +1,16 @@
+.schedule-stages{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0}
+.schedule-stages>div{border:1px solid var(--line);border-top:3px solid var(--gold);padding:18px;background:var(--wash)}
+.schedule-stages strong{display:block;font-size:36px;line-height:1.1}.schedule-stages span,.schedule-stages small{display:block;font-size:16px;margin-top:8px}
+.schedule-daily{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;margin:20px 0}
+.schedule-daily label{font-size:15px}.schedule-daily input{width:100%;padding:9px 4px;border:1px solid var(--line);background:var(--paper);color:var(--ink);font-size:18px;text-align:center;border-radius:3px}
+.schedule-daily input[readonly]{background:var(--wash)}.schedule-toggle{display:flex;gap:10px;align-items:center;font-size:18px}
+.schedule-form .form-grid label{min-width:0}.schedule-form input,.schedule-form select{max-width:100%}
+.schedule-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;border-block:1px solid var(--gold);padding:16px 0;margin:22px 0}
+.schedule-stats p{margin:0;font-size:16px}.schedule-stats strong{display:block;font-size:30px}.schedule-alerts,.schedule-transition{border-left:3px solid var(--gold);padding:16px 16px 16px 32px;background:var(--wash)}
+.schedule-alerts li{margin:8px 0}.schedule-week h4{font-size:22px;margin:28px 0 8px}.schedule-week table{min-width:550px}.schedule-result .table-wrap{background:var(--paper)}
+@media(max-width:800px){.schedule-stages{grid-template-columns:1fr}.schedule-stages>div{padding:14px}.schedule-stages strong{font-size:30px}.schedule-daily{grid-template-columns:repeat(3,minmax(0,1fr))}.schedule-stats{gap:8px}.schedule-stats p{font-size:14px}.schedule-stats strong{font-size:26px}}
+@media print{.schedule-form,.schedule-actions,.schedule-storage{display:none!important}.schedule-week{break-before:auto}.schedule-week h4{break-after:avoid}.schedule-week table{min-width:0}.schedule-printing .topbar,.schedule-printing #sidebar,.schedule-printing .language:not([hidden])>:not([data-schedule-planner]),.schedule-printing footer{display:none!important}.schedule-printing [data-schedule-planner]{display:block!important;border:0}.schedule-printing .schedule-result{display:block}.schedule-printing [data-schedule-planner] .source-note{display:block!important}}
+
+.schedule-print-sources{display:none}@media print{.schedule-print-sources{display:block}.schedule-print-sources a{overflow-wrap:anywhere}.schedule-print-sources a::after{content:" (" attr(href) ")";font-size:8pt}}
+
+.schedule-planner>p,.schedule-planner .caption,.schedule-transition,.schedule-planner .source-note p,.schedule-print-sources p{text-align:justify;text-justify:inter-word;hyphens:auto}.schedule-planner blockquote{border-left:3px solid var(--gold);margin:18px 0;padding:0 18px}.schedule-planner blockquote p{font-size:17px}
