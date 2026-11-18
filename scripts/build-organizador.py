@@ -3,7 +3,7 @@ from pathlib import Path
 import re
 ROOT=Path(__file__).resolve().parents[1]
 p=ROOT/'index.html';page=p.read_text()
-for kind,id in [('style','schnorr-schedule-style'),('script','schnorr-schedule-engine'),('script','schnorr-schedule-interface')]:
+for kind,id in [('style','schnorr-schedule-style'),('script','schnorr-schedule-engine'),('script','schnorr-schedule-presets'),('script','schnorr-schedule-interface')]:
  page=re.sub(r'<'+kind+r' id="'+id+r'">.*?</'+kind+'>','',page,flags=re.S)
 page=re.sub(r'<section[^>]*data-schedule-planner[^>]*></section>','',page)
 page=re.sub(r'<a[^>]*data-schedule-(?:nav|entry)[^>]*>.*?</a>','',page,flags=re.S)
@@ -24,7 +24,7 @@ def entry(m):
  return m.group(1)+m.group(2).replace('<div class="button-row">','<div class="button-row">'+tag,1)+m.group(3)
 page=re.sub(r'(<section\b(?=[^>]*data-key="inicio")[^>]*>)(.*?)(</section>)',entry,page,flags=re.S)
 assert count==3
-css=(ROOT/'assets/organizador/style.css').read_text();engine=(ROOT/'assets/organizador/engine.js').read_text();ui=(ROOT/'assets/organizador/interface.js').read_text()
+css=(ROOT/'assets/organizador/style.css').read_text();engine=(ROOT/'assets/organizador/engine.js').read_text();ui=(ROOT/'assets/organizador/interface.js').read_text();presets=(ROOT/'assets/organizador/presets.js').read_text()
 page=page.replace('</head>','<style id="schnorr-schedule-style">'+css+'</style></head>')
-page=page.replace('</body>','<script id="schnorr-schedule-engine">'+engine+'</script><script id="schnorr-schedule-interface">'+ui+'</script></body>')
+page=page.replace('</body>','<script id="schnorr-schedule-engine">'+engine+'</script><script id="schnorr-schedule-presets">'+presets+'</script><script id="schnorr-schedule-interface">'+ui+'</script></body>')
 p.write_text(page)
