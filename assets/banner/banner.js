@@ -14,24 +14,22 @@
   let index=0,paused=reduced.matches,timer=null,hover=false,focused=false;
   const language=()=>document.documentElement.lang.startsWith('en')?'en':document.documentElement.lang.startsWith('es')?'es':'pt';
   const banner=document.createElement('aside');banner.className='schnorr-banner';banner.setAttribute('aria-roledescription','carousel');
-  banner.innerHTML='<div class="banner-topline"></div><div class="banner-layout"><div class="banner-copy"><p class="banner-kicker"></p><h2></h2><p class="banner-description"></p><a class="banner-cta" target="_blank" rel="noopener noreferrer"></a></div><div class="banner-brand"></div></div><div class="banner-bottom"><nav class="banner-links"></nav><div class="banner-controls"><button type="button" class="banner-prev">←</button><span class="banner-count" aria-live="off"></span><button type="button" class="banner-next">→</button><button type="button" class="banner-pause"></button></div></div>';
-  const logo=document.querySelector('header img, .topbar img');if(logo){const img=logo.cloneNode(false);img.removeAttribute('id');img.alt='Schnorr & Advogados Associados';banner.querySelector('.banner-brand').append(img);}
+  banner.innerHTML='<div class="banner-topline"></div><div class="banner-layout"><div class="banner-copy"><p class="banner-kicker"></p><h2></h2><p class="banner-description"></p><a class="banner-cta" target="_blank" rel="noopener noreferrer"></a></div><div class="banner-brand"></div></div><div class="banner-bottom"><nav class="banner-links"></nav><div class="banner-controls"><span class="banner-count" aria-live="off"></span><button type="button" class="banner-pause"></button></div></div>';
+  const img=document.createElement('img');img.src='assets/modern/fabio-schnorr.png';img.alt='Fábio Schnorr, em fotografia institucional do escritório';img.decoding='async';banner.querySelector('.banner-brand').append(img);
   document.querySelector('main').prepend(banner);
   function stop(){if(timer!==null){clearInterval(timer);timer=null;}}
-  function schedule(){stop();if(!paused&&!hover&&!focused&&!document.hidden)timer=setInterval(()=>show(index+1),9000);}
+  function schedule(){stop();if(!paused&&!hover&&!focused&&!document.hidden)timer=setInterval(()=>show(index+1),2000);}
   function show(next){
     index=(next+slides.length)%slides.length;const l=language(),w=ui[l],[k,h,d,c]=slides[index].text[l];
-    banner.setAttribute('aria-label',w.region);banner.querySelector('.banner-topline').textContent=w.free;
+    banner.dataset.palette=String(index);banner.setAttribute('aria-label',w.region);banner.querySelector('.banner-topline').textContent=w.free;
     banner.querySelector('.banner-kicker').textContent=k;banner.querySelector('h2').textContent=h;banner.querySelector('.banner-description').textContent=d;
-    const a=banner.querySelector('.banner-cta');a.textContent=c+' ↗';a.href=slides[index].url;
-    const prev=banner.querySelector('.banner-prev'),nextButton=banner.querySelector('.banner-next');prev.setAttribute('aria-label',w.prev);nextButton.setAttribute('aria-label',w.next);
-    const count=banner.querySelector('.banner-count');count.textContent=(index+1)+' / '+slides.length;count.setAttribute('aria-label',w.slide+' '+(index+1)+' / '+slides.length);
+    const a=banner.querySelector('.banner-cta');a.textContent=c;a.href=slides[index].url;
+    
+    const count=banner.querySelector('.banner-count');count.replaceChildren(...slides.map((_,i)=>{const dot=document.createElement('i');if(i===index)dot.className='active';dot.setAttribute('aria-hidden','true');return dot;}));count.setAttribute('aria-label',w.slide+' '+(index+1)+' / '+slides.length);
     const pause=banner.querySelector('.banner-pause');pause.textContent=paused?w.play:w.pause;pause.setAttribute('aria-pressed',String(paused));
     const links=banner.querySelector('.banner-links');links.setAttribute('aria-label',w.region);links.replaceChildren();
-    for(const [label,url] of [[w.instagram,'https://www.instagram.com/advschnorr/'],[w.website,'https://advschnorr.com.br/'],[w.contact,'https://advschnorr.com.br/#atendimento']]){const link=document.createElement('a');link.textContent=label+' ↗';link.href=url;link.target='_blank';link.rel='noopener noreferrer';links.append(link);}
+    for(const [label,url] of [[w.instagram,'https://www.instagram.com/advschnorr/'],[w.website,'https://advschnorr.com.br/'],[w.contact,'https://advschnorr.com.br/#atendimento']]){const link=document.createElement('a');link.textContent=label;link.href=url;link.target='_blank';link.rel='noopener noreferrer';links.append(link);}
   }
-  banner.querySelector('.banner-prev').addEventListener('click',()=>{show(index-1);schedule();});
-  banner.querySelector('.banner-next').addEventListener('click',()=>{show(index+1);schedule();});
   banner.querySelector('.banner-pause').addEventListener('click',()=>{paused=!paused;show(index);schedule();});
   banner.addEventListener('mouseenter',()=>{hover=true;stop();});banner.addEventListener('mouseleave',()=>{hover=false;schedule();});
   banner.addEventListener('focusin',()=>{focused=true;stop();});banner.addEventListener('focusout',e=>{focused=banner.contains(e.relatedTarget);schedule();});

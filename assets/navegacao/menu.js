@@ -3,6 +3,7 @@
   'use strict';
   const groups = [
     ['organizador',['Escala 5 × 2','5 × 2 schedule','Escala 5 × 2'],['organizador']],
+    ['decreto',['Decreto 13.173 e salário-hora','Decree 13,173 and hourly pay','Decreto 13.173 y salario-hora'],['decreto']],
     ['contratos',['Tipos de contratos de trabalho','Employment contract types','Tipos de contratos de trabajo'],['fundamentos','escolha','indeterminado','experiencia','determinado','safra','intermitente','pequeno','consorcio','avulso','temporario','terceirizacao','mei','cooperativa']],
     ['gestao',['Admissão e gestão do trabalho','Onboarding and employment management','Ingreso y gestión del trabajo'],['admissao','migrantes','jornada','rescisao','coletiva']],
     ['protecao',['Saúde e segurança no campo','Rural health and safety','Salud y seguridad rural'],['sst']],
