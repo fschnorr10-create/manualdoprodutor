@@ -10,11 +10,12 @@ banner.innerHTML='<div class="banner-backdrop" aria-hidden="true"></div><div cla
 document.querySelector('main').prepend(banner);
 const image=banner.querySelector('.banner-brand img'),links=banner.querySelector('.banner-links');
 for(const [key,url] of [['instagram','https://www.instagram.com/advschnorr/'],['website','https://advschnorr.com.br/'],['contact','https://advschnorr.com.br/#atendimento']]){const a=document.createElement('a');a.dataset.label=key;a.href=url;a.target='_blank';a.rel='noopener noreferrer';links.append(a);}
-const preload=new Set();function warm(i){const s=slides[i%slides.length];if(preload.has(s.image))return;preload.add(s.image);const im=new Image();im.src=s.image;}
+const cache=new Map(),failed=new Set();let requestId=0;
+function warm(i){const s=slides[i%slides.length];if(cache.has(s.image))return cache.get(s.image);const promise=new Promise((resolve,reject)=>{const im=new Image();im.decoding='async';im.onload=()=>{const decoded=typeof im.decode==='function'?im.decode().catch(()=>{}):Promise.resolve();decoded.then(()=>resolve(im));};im.onerror=()=>reject(Error('image'));im.src=s.image;});cache.set(s.image,promise);promise.catch(()=>{});return promise;}
 function stop(){if(timer!==null){clearInterval(timer);timer=null;}}
 function schedule(){stop();if(!paused&&!focused&&!document.hidden)timer=setInterval(()=>show(index+1),2000);}
-function show(next){
- index=(next+slides.length)%slides.length;const s=slides[index],l=lang(),w=ui[l],[k,h,d,c]=s.text[l];
+async function show(next){
+ const requested=(next+slides.length)%slides.length,id=++requestId,s=slides[requested];try{await warm(requested);}catch{failed.add(requested);if(failed.size<slides.length&&id===requestId)show(requested+1);return;}if(id!==requestId)return;index=requested;const l=lang(),w=ui[l],[k,h,d,c]=s.text[l];
  banner.dataset.slideId=s.id;banner.dataset.kind=s.kind;banner.style.setProperty('--campaign-color',s.color);banner.style.setProperty('--campaign-position',s.position);banner.style.setProperty('--campaign-fit',s.fit);banner.setAttribute('aria-label',w.region);
  banner.querySelector('.banner-topline').textContent=w.free;banner.querySelector('.banner-kicker').textContent=k;banner.querySelector('h2').textContent=h;banner.querySelector('.banner-description').textContent=d;
  const cta=banner.querySelector('.banner-cta');cta.textContent=c;cta.href=s.url;
@@ -26,5 +27,5 @@ function show(next){
 }
 banner.querySelector('.banner-pause').addEventListener('click',()=>{paused=!paused;show(index);schedule();});
 banner.addEventListener('focusin',()=>{focused=true;stop();});banner.addEventListener('focusout',e=>{focused=banner.contains(e.relatedTarget);schedule();});
-document.addEventListener('visibilitychange',schedule);reduced.addEventListener('change',e=>{if(e.matches)paused=true;show(index);schedule();});new MutationObserver(()=>show(index)).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});show(0);schedule();
+document.addEventListener('visibilitychange',schedule);reduced.addEventListener('change',e=>{if(e.matches)paused=true;show(index);schedule();});new MutationObserver(()=>show(index)).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});show(0).then(schedule);slides.forEach((_,i)=>warm(i));
 })();

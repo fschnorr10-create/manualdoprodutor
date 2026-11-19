@@ -1,7 +1,7 @@
 [
   {
     "id": "auditoria",
-    "image": "assets/banner/photos/auditoria-industrial.jpg",
+    "image": "assets/banner/photos/auditoria.webp",
     "kind": "service",
     "url": "https://advschnorr.com.br/#atendimento",
     "text": {
@@ -32,7 +32,7 @@
   },
   {
     "id": "coletiva",
-    "image": "assets/banner/photos/negociacao-coletiva.jpg",
+    "image": "assets/banner/photos/coletiva.webp",
     "kind": "service",
     "url": "https://advschnorr.com.br/#atendimento",
     "text": {
@@ -63,7 +63,7 @@
   },
   {
     "id": "cursos",
-    "image": "assets/banner/photos/cursos-palestras.jpg",
+    "image": "assets/banner/photos/cursos.webp",
     "kind": "service",
     "url": "https://advschnorr.com.br/#atendimento",
     "text": {
@@ -94,7 +94,7 @@
   },
   {
     "id": "cooperativas",
-    "image": "assets/banner/photos/cooperativas.jpg",
+    "image": "assets/banner/photos/cooperativas.webp",
     "kind": "service",
     "url": "https://advschnorr.com.br/#atendimento",
     "text": {
@@ -125,7 +125,7 @@
   },
   {
     "id": "guia5x2",
-    "image": "assets/banner/photos/guia-5x2-capa.png",
+    "image": "assets/banner/photos/guia5x2.webp",
     "kind": "book",
     "url": "https://drive.google.com/file/d/19U7zNvSsH5niIyc2lGGVMWVJ2V4x1QwR/view",
     "text": {
@@ -156,7 +156,7 @@
   },
   {
     "id": "clt",
-    "image": "assets/banner/photos/clt-completa-2026.png",
+    "image": "assets/banner/photos/clt.webp",
     "kind": "book",
     "url": "https://www.editorajuspodivm.com.br/saraiva-schnorr-clt-consolidacao-das-leis-do-trabalho-completa-2026",
     "text": {
@@ -187,7 +187,7 @@
   },
   {
     "id": "compliance",
-    "image": "assets/banner/photos/compliance-livro.jpg",
+    "image": "assets/banner/photos/compliance.webp",
     "kind": "book",
     "url": "https://advschnorr.com.br/#publicacoes",
     "text": {
@@ -218,7 +218,7 @@
   },
   {
     "id": "credito-rural",
-    "image": "assets/banner/photos/credito-rural-capa.png",
+    "image": "assets/banner/photos/credito-rural.webp",
     "kind": "book",
     "url": "https://drive.google.com/file/d/1OrhcGwJ1DDz3daC2WlY70XvLBRl56oPk/view",
     "text": {
@@ -249,7 +249,7 @@
   },
   {
     "id": "bancario",
-    "image": "assets/banner/photos/negociacao-bancaria.png",
+    "image": "assets/banner/photos/bancario.webp",
     "kind": "service",
     "url": "https://advschnorr.com.br/#atendimento",
     "text": {
@@ -280,7 +280,7 @@
   },
   {
     "id": "clt-transformacao",
-    "image": "assets/banner/photos/clt-esta-morrendo.jpg",
+    "image": "assets/banner/photos/clt-transformacao.webp",
     "kind": "book",
     "url": "https://advschnorr.com.br/#publicacoes",
     "text": {
@@ -311,7 +311,7 @@
   },
   {
     "id": "clt-campo",
-    "image": "assets/banner/photos/clt-no-campo.jpg",
+    "image": "assets/banner/photos/clt-campo.webp",
     "kind": "service",
     "url": "https://advschnorr.com.br/#atendimento",
     "text": {
@@ -342,7 +342,7 @@
   },
   {
     "id": "instagram",
-    "image": "assets/modern/fabio-schnorr.png",
+    "image": "assets/banner/photos/instagram.webp",
     "kind": "service",
     "url": "https://www.instagram.com/advschnorr/",
     "text": {
