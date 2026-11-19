@@ -56,7 +56,7 @@
       ]
     },
     "alt": "Registro de apresentação sobre estrutura de negociações coletivas",
-    "position": "center",
+    "position": "right center",
     "color": "#33291f",
     "fit": "contain",
     "illustration": false
@@ -306,37 +306,6 @@
     "alt": "Capa fornecida do livro A CLT Está Morrendo",
     "position": "center",
     "color": "#172c42",
-    "fit": "contain",
-    "illustration": false
-  },
-  {
-    "id": "clt-campo",
-    "image": "assets/banner/photos/clt-campo.webp",
-    "kind": "service",
-    "url": "https://advschnorr.com.br/#atendimento",
-    "text": {
-      "pt": [
-        "TRABALHO NO CAMPO",
-        "Orientação próxima de quem produz.",
-        "Contratos, jornadas e relações de trabalho no agronegócio.",
-        "Conheça nossa atuação"
-      ],
-      "en": [
-        "RURAL EMPLOYMENT",
-        "Guidance close to those who produce.",
-        "Contracts, schedules and employment relations in agribusiness.",
-        "Explore our practice"
-      ],
-      "es": [
-        "TRABAJO RURAL",
-        "Orientación cercana a quien produce.",
-        "Contratos, jornadas y relaciones laborales en el agronegocio.",
-        "Conocer nuestra actuación"
-      ]
-    },
-    "alt": "Registro institucional com exemplar da CLT em ambiente rural",
-    "position": "center 37%",
-    "color": "#233b2a",
     "fit": "contain",
     "illustration": false
   },
