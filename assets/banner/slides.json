@@ -1,0 +1,374 @@
+[
+  {
+    "id": "auditoria",
+    "image": "assets/banner/photos/auditoria-industrial.jpg",
+    "kind": "service",
+    "url": "https://advschnorr.com.br/#atendimento",
+    "text": {
+      "pt": [
+        "AUDITORIA · COMPLIANCE · SST",
+        "Prevenção que acompanha a operação.",
+        "Auditoria trabalhista e orientação jurídica em saúde e segurança do trabalho.",
+        "Conheça nossa atuação"
+      ],
+      "en": [
+        "AUDIT · COMPLIANCE · SAFETY",
+        "Prevention alongside your operation.",
+        "Employment audits and legal guidance on occupational health and safety.",
+        "Explore our practice"
+      ],
+      "es": [
+        "AUDITORÍA · COMPLIANCE · SST",
+        "Prevención junto a la operación.",
+        "Auditoría laboral y orientación jurídica en salud y seguridad del trabajo.",
+        "Conocer nuestra actuación"
+      ]
+    },
+    "alt": "Registro institucional em ambiente industrial",
+    "position": "center 45%",
+    "color": "#122b3b",
+    "fit": "cover",
+    "illustration": false
+  },
+  {
+    "id": "coletiva",
+    "image": "assets/banner/photos/negociacao-coletiva.jpg",
+    "kind": "service",
+    "url": "https://advschnorr.com.br/#atendimento",
+    "text": {
+      "pt": [
+        "RELAÇÕES COLETIVAS",
+        "Negociação com fundamento e estratégia.",
+        "Apoio a empresas e entidades em acordos e convenções coletivas.",
+        "Conheça o atendimento"
+      ],
+      "en": [
+        "COLLECTIVE RELATIONS",
+        "Negotiation with sound legal strategy.",
+        "Support for businesses and organisations on collective agreements.",
+        "Explore our services"
+      ],
+      "es": [
+        "RELACIONES COLECTIVAS",
+        "Negociación con fundamento y estrategia.",
+        "Apoyo a empresas y entidades en acuerdos y convenios colectivos.",
+        "Conocer la atención"
+      ]
+    },
+    "alt": "Registro de apresentação sobre estrutura de negociações coletivas",
+    "position": "center",
+    "color": "#33291f",
+    "fit": "contain",
+    "illustration": false
+  },
+  {
+    "id": "cursos",
+    "image": "assets/banner/photos/cursos-palestras.jpg",
+    "kind": "service",
+    "url": "https://advschnorr.com.br/#atendimento",
+    "text": {
+      "pt": [
+        "CURSOS E PALESTRAS",
+        "Conhecimento que chega à equipe.",
+        "Capacitação para RH, departamento pessoal, gestores e organizações.",
+        "Conheça os temas"
+      ],
+      "en": [
+        "COURSES AND TALKS",
+        "Knowledge that reaches your team.",
+        "Training for HR, payroll, managers and organisations.",
+        "Explore the topics"
+      ],
+      "es": [
+        "CURSOS Y CONFERENCIAS",
+        "Conocimiento que llega al equipo.",
+        "Capacitación para RR. HH., personal, gestores y organizaciones.",
+        "Conocer los temas"
+      ]
+    },
+    "alt": "Fotografia institucional de capacitação com participantes",
+    "position": "center 38%",
+    "color": "#14343b",
+    "fit": "cover",
+    "illustration": false
+  },
+  {
+    "id": "cooperativas",
+    "image": "assets/banner/photos/cooperativas.jpg",
+    "kind": "service",
+    "url": "https://advschnorr.com.br/#atendimento",
+    "text": {
+      "pt": [
+        "AGRONEGÓCIO E COOPERATIVAS",
+        "Direito conectado à realidade do campo.",
+        "Assessoria a produtores, empresas rurais e cooperativas.",
+        "Conheça os serviços"
+      ],
+      "en": [
+        "AGRIBUSINESS AND COOPERATIVES",
+        "Law connected to rural reality.",
+        "Advice for growers, rural businesses and cooperatives.",
+        "Explore our services"
+      ],
+      "es": [
+        "AGRONEGOCIOS Y COOPERATIVAS",
+        "Derecho conectado con la realidad rural.",
+        "Asesoría a productores, empresas rurales y cooperativas.",
+        "Conocer los servicios"
+      ]
+    },
+    "alt": "Registro institucional em ambiente de cooperativa",
+    "position": "center 45%",
+    "color": "#153c32",
+    "fit": "cover",
+    "illustration": false
+  },
+  {
+    "id": "guia5x2",
+    "image": "assets/banner/photos/guia-5x2-capa.png",
+    "kind": "book",
+    "url": "https://drive.google.com/file/d/19U7zNvSsH5niIyc2lGGVMWVJ2V4x1QwR/view",
+    "text": {
+      "pt": [
+        "GUIA PRÁTICO · FÁBIO SCHNORR E RENATO SARAIVA",
+        "Escala 5 × 2, da regra à aplicação.",
+        "Conheça o guia para organizar jornadas, descansos e negociação coletiva.",
+        "Conheça o guia"
+      ],
+      "en": [
+        "PRACTICAL GUIDE · FÁBIO SCHNORR AND RENATO SARAIVA",
+        "5 × 2: from rules to practice.",
+        "A guide to working hours, rest days and collective bargaining.",
+        "Explore the guide"
+      ],
+      "es": [
+        "GUÍA PRÁCTICA · FÁBIO SCHNORR Y RENATO SARAIVA",
+        "Escala 5 × 2, de la regla a la práctica.",
+        "Una guía de jornadas, descansos y negociación colectiva.",
+        "Conocer la guía"
+      ]
+    },
+    "alt": "Capa original do Guia Prático da Escala 5×2, atualizada pelo Decreto 13.173/2026",
+    "position": "center",
+    "color": "#071e35",
+    "fit": "contain",
+    "illustration": false
+  },
+  {
+    "id": "clt",
+    "image": "assets/banner/photos/clt-completa-2026.png",
+    "kind": "book",
+    "url": "https://www.editorajuspodivm.com.br/saraiva-schnorr-clt-consolidacao-das-leis-do-trabalho-completa-2026",
+    "text": {
+      "pt": [
+        "CLT COMPLETA 2026 · EDITORA JUSPODIVM",
+        "Uma referência para a prática trabalhista.",
+        "Obra organizada por Renato Saraiva e Fábio Schnorr.",
+        "Conheça na editora"
+      ],
+      "en": [
+        "COMPLETE CLT 2026 · JUSPODIVM",
+        "A reference for employment-law practice.",
+        "Organised by Renato Saraiva and Fábio Schnorr.",
+        "View at the publisher"
+      ],
+      "es": [
+        "CLT COMPLETA 2026 · JUSPODIVM",
+        "Una referencia para la práctica laboral.",
+        "Obra organizada por Renato Saraiva y Fábio Schnorr.",
+        "Conocer en la editorial"
+      ]
+    },
+    "alt": "Capa oficial da CLT Completa 2026, Editora Juspodivm",
+    "position": "center",
+    "color": "#422516",
+    "fit": "contain",
+    "illustration": false
+  },
+  {
+    "id": "compliance",
+    "image": "assets/banner/photos/compliance-livro.jpg",
+    "kind": "book",
+    "url": "https://advschnorr.com.br/#publicacoes",
+    "text": {
+      "pt": [
+        "LIVRO · RENATO SARAIVA E FÁBIO SCHNORR",
+        "Compliance Trabalhista.",
+        "Auditoria, prevenção de passivos e gestão das relações de trabalho.",
+        "Explore as publicações"
+      ],
+      "en": [
+        "BOOK · RENATO SARAIVA AND FÁBIO SCHNORR",
+        "Employment Compliance.",
+        "Audits, liability prevention and employment management.",
+        "Explore publications"
+      ],
+      "es": [
+        "LIBRO · RENATO SARAIVA Y FÁBIO SCHNORR",
+        "Compliance Laboral.",
+        "Auditoría, prevención de pasivos y gestión de relaciones laborales.",
+        "Explorar publicaciones"
+      ]
+    },
+    "alt": "Imagem fornecida do livro Compliance Trabalhista",
+    "position": "center",
+    "color": "#122944",
+    "fit": "contain",
+    "illustration": false
+  },
+  {
+    "id": "credito-rural",
+    "image": "assets/banner/photos/credito-rural-capa.png",
+    "kind": "book",
+    "url": "https://drive.google.com/file/d/1OrhcGwJ1DDz3daC2WlY70XvLBRl56oPk/view",
+    "text": {
+      "pt": [
+        "BIBLIOTECA SCHNORR · CRÉDITO RURAL",
+        "Antes de contratar. E ao renegociar.",
+        "Conheça o livro Crédito Rural no Brasil, disponível na biblioteca do escritório.",
+        "Conheça o livro"
+      ],
+      "en": [
+        "SCHNORR LIBRARY · RURAL CREDIT",
+        "Before borrowing. When renegotiating.",
+        "Explore Crédito Rural no Brasil in the firm’s library.",
+        "Explore the book"
+      ],
+      "es": [
+        "BIBLIOTECA SCHNORR · CRÉDITO RURAL",
+        "Antes de contratar. Al renegociar.",
+        "Conozca Crédito Rural no Brasil en la biblioteca del despacho.",
+        "Conocer el libro"
+      ]
+    },
+    "alt": "Capa original do livro Crédito Rural no Brasil, biblioteca Schnorr",
+    "position": "center",
+    "color": "#172f2c",
+    "fit": "contain",
+    "illustration": false
+  },
+  {
+    "id": "bancario",
+    "image": "assets/banner/photos/negociacao-bancaria.png",
+    "kind": "service",
+    "url": "https://advschnorr.com.br/#atendimento",
+    "text": {
+      "pt": [
+        "NEGOCIAÇÃO DE DÍVIDAS BANCÁRIAS",
+        "Estratégia para analisar e renegociar.",
+        "Assessoria jurídica em contratos bancários, endividamento e crédito rural.",
+        "Conheça o atendimento"
+      ],
+      "en": [
+        "BANK DEBT NEGOTIATION",
+        "A strategy to review and renegotiate.",
+        "Legal advice on banking contracts, debt and rural credit.",
+        "Explore our services"
+      ],
+      "es": [
+        "NEGOCIACIÓN DE DEUDAS BANCARIAS",
+        "Estrategia para analizar y renegociar.",
+        "Asesoría jurídica en contratos bancarios, endeudamiento y crédito rural.",
+        "Conocer la atención"
+      ]
+    },
+    "alt": "Imagem ilustrativa de análise de contrato e negociação bancária",
+    "position": "right center",
+    "color": "#102333",
+    "fit": "cover",
+    "illustration": true
+  },
+  {
+    "id": "clt-transformacao",
+    "image": "assets/banner/photos/clt-esta-morrendo.jpg",
+    "kind": "book",
+    "url": "https://advschnorr.com.br/#publicacoes",
+    "text": {
+      "pt": [
+        "LIVRO · FÁBIO SCHNORR E RENATO SARAIVA",
+        "A CLT Está Morrendo.",
+        "Uma reflexão sobre o modelo trabalhista e a transformação do trabalho.",
+        "Conheça a obra"
+      ],
+      "en": [
+        "BOOK · FÁBIO SCHNORR AND RENATO SARAIVA",
+        "A CLT Está Morrendo.",
+        "Reflections on the employment model and the transformation of work.",
+        "Explore the book"
+      ],
+      "es": [
+        "LIBRO · FÁBIO SCHNORR Y RENATO SARAIVA",
+        "A CLT Está Morrendo.",
+        "Una reflexión sobre el modelo laboral y la transformación del trabajo.",
+        "Conocer la obra"
+      ]
+    },
+    "alt": "Capa fornecida do livro A CLT Está Morrendo",
+    "position": "center",
+    "color": "#172c42",
+    "fit": "contain",
+    "illustration": false
+  },
+  {
+    "id": "clt-campo",
+    "image": "assets/banner/photos/clt-no-campo.jpg",
+    "kind": "service",
+    "url": "https://advschnorr.com.br/#atendimento",
+    "text": {
+      "pt": [
+        "TRABALHO NO CAMPO",
+        "Orientação próxima de quem produz.",
+        "Contratos, jornadas e relações de trabalho no agronegócio.",
+        "Conheça nossa atuação"
+      ],
+      "en": [
+        "RURAL EMPLOYMENT",
+        "Guidance close to those who produce.",
+        "Contracts, schedules and employment relations in agribusiness.",
+        "Explore our practice"
+      ],
+      "es": [
+        "TRABAJO RURAL",
+        "Orientación cercana a quien produce.",
+        "Contratos, jornadas y relaciones laborales en el agronegocio.",
+        "Conocer nuestra actuación"
+      ]
+    },
+    "alt": "Registro institucional com exemplar da CLT em ambiente rural",
+    "position": "center 37%",
+    "color": "#233b2a",
+    "fit": "contain",
+    "illustration": false
+  },
+  {
+    "id": "instagram",
+    "image": "assets/modern/fabio-schnorr.png",
+    "kind": "service",
+    "url": "https://www.instagram.com/advschnorr/",
+    "text": {
+      "pt": [
+        "INSTAGRAM · @ADVSCHNORR",
+        "Direito conectado à sua realidade.",
+        "Acompanhe os conteúdos do escritório sobre trabalho, empresas e agronegócio.",
+        "Conheça o Instagram"
+      ],
+      "en": [
+        "INSTAGRAM · @ADVSCHNORR",
+        "Law connected to your reality.",
+        "Follow the firm’s content on employment, business and agribusiness.",
+        "Visit Instagram"
+      ],
+      "es": [
+        "INSTAGRAM · @ADVSCHNORR",
+        "Derecho conectado con su realidad.",
+        "Siga los contenidos del despacho sobre trabajo, empresas y agronegocios.",
+        "Visitar Instagram"
+      ]
+    },
+    "alt": "Fotografia institucional de Fábio Schnorr",
+    "position": "25% center",
+    "color": "#1a2d42",
+    "fit": "contain",
+    "illustration": false
+  }
+]

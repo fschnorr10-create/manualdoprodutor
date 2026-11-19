@@ -1,39 +1,30 @@
-/* Divulgação institucional, sem rastreamento e com rotação controlável pelo leitor. */
+/* Fotografias e capas originais, com extensão visual em CSS e sem rastreamento. */
 (() => {
-  'use strict';
-  const slides=[
-    {url:'https://www.instagram.com/advschnorr/',text:{pt:['INSTAGRAM · @ADVSCHNORR','Direito conectado à sua realidade.','Acompanhe Fábio Schnorr e os conteúdos do escritório sobre trabalho, empresas e agronegócio.','Conhecer o Instagram'],en:['INSTAGRAM · @ADVSCHNORR','Law connected to your reality.','Follow Fábio Schnorr and the firm’s content on employment, business and agribusiness.','Visit Instagram'],es:['INSTAGRAM · @ADVSCHNORR','Derecho conectado con su realidad.','Siga a Fábio Schnorr y los contenidos del despacho sobre trabajo, empresas y agronegocios.','Visitar Instagram']}},
-    {url:'https://advschnorr.com.br/#atendimento',text:{pt:['TRABALHISTA E RELAÇÕES COLETIVAS','Orientação para as decisões da sua empresa.','Consultoria, defesa trabalhista e apoio em relações sindicais, acordos e convenções coletivas.','Conhecer o atendimento'],en:['EMPLOYMENT AND COLLECTIVE RELATIONS','Guidance for your business decisions.','Employment advice and defence, with support on union relations and collective agreements.','Explore our services'],es:['LABORAL Y RELACIONES COLECTIVAS','Orientación para las decisiones de su empresa.','Asesoría, defensa laboral y apoyo en relaciones sindicales, acuerdos y convenios colectivos.','Conocer la atención']}},
-    {url:'https://advschnorr.com.br/#atendimento',text:{pt:['AUDITORIA E COMPLIANCE TRABALHISTA','Prevenção começa com uma gestão organizada.','Auditorias, prevenção de passivos e orientação em saúde e segurança do trabalho e práticas de gestão.','Conhecer os serviços'],en:['EMPLOYMENT AUDIT AND COMPLIANCE','Prevention starts with organised management.','Audits, liability prevention and guidance on occupational health, safety and management practices.','Explore our services'],es:['AUDITORÍA Y COMPLIANCE LABORAL','La prevención empieza con una gestión organizada.','Auditorías, prevención de pasivos y orientación en salud, seguridad laboral y prácticas de gestión.','Conocer los servicios']}},
-    {url:'https://advschnorr.com.br/#atendimento',text:{pt:['AGRONEGÓCIO E COOPERATIVAS','Assessoria conectada à atividade no campo.','Atuação para produtores, empresas rurais e cooperativas, incluindo contratos e questões trabalhistas.','Conhecer nossa atuação'],en:['AGRIBUSINESS AND COOPERATIVES','Legal advice connected to rural operations.','Services for growers, rural businesses and cooperatives, including contracts and employment matters.','Explore our practice'],es:['AGRONEGOCIOS Y COOPERATIVAS','Asesoría conectada con la actividad rural.','Atención a productores, empresas rurales y cooperativas, incluidos contratos y cuestiones laborales.','Conocer nuestra actuación']}},
-    {url:'https://advschnorr.com.br/',text:{pt:['CURSOS, PALESTRAS E CONTEÚDO','Conhecimento para orientar a prática.','Conheça os cursos, palestras, publicações e ferramentas desenvolvidos para equipes e organizações.','Explorar o site'],en:['COURSES, TALKS AND CONTENT','Knowledge to guide practice.','Discover courses, talks, publications and tools for teams and organisations.','Explore our website'],es:['CURSOS, CONFERENCIAS Y CONTENIDO','Conocimiento para orientar la práctica.','Conozca cursos, conferencias, publicaciones y herramientas para equipos y organizaciones.','Explorar el sitio']}},
-    {url:'https://advschnorr.com.br/#atendimento',text:{pt:['SCHNORR & ADVOGADOS ASSOCIADOS','Atendimento em todo o Brasil.','Conheça as áreas trabalhista, tributária, empresarial, imobiliária, fundiária e bancária do escritório.','Acessar canais de atendimento'],en:['SCHNORR & ADVOGADOS ASSOCIADOS','Serving clients throughout Brazil.','Explore the firm’s employment, tax, business, property, land and banking practices.','View contact options'],es:['SCHNORR & ADVOGADOS ASSOCIADOS','Atención en todo Brasil.','Conozca las áreas laboral, tributaria, empresarial, inmobiliaria, de tierras y bancaria del despacho.','Ver canales de atención']}}
-  ];
-  const ui={pt:{region:'Divulgação institucional Schnorr',free:'Ferramenta de acesso gratuito · Uma iniciativa Schnorr',prev:'Mensagem anterior',next:'Próxima mensagem',pause:'Pausar rotação',play:'Retomar rotação',slide:'Mensagem',website:'Site do escritório',contact:'Contato',instagram:'Instagram'},en:{region:'Schnorr institutional information',free:'Free-access tool · A Schnorr initiative',prev:'Previous message',next:'Next message',pause:'Pause rotation',play:'Resume rotation',slide:'Message',website:'Firm website',contact:'Contact',instagram:'Instagram'},es:{region:'Información institucional Schnorr',free:'Herramienta de acceso gratuito · Una iniciativa Schnorr',prev:'Mensaje anterior',next:'Mensaje siguiente',pause:'Pausar rotación',play:'Reanudar rotación',slide:'Mensaje',website:'Sitio del despacho',contact:'Contacto',instagram:'Instagram'}};
-  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
-  let index=0,paused=reduced.matches,timer=null,hover=false,focused=false;
-  const language=()=>document.documentElement.lang.startsWith('en')?'en':document.documentElement.lang.startsWith('es')?'es':'pt';
-  const banner=document.createElement('aside');banner.className='schnorr-banner';banner.setAttribute('aria-roledescription','carousel');
-  banner.innerHTML='<div class="banner-topline"></div><div class="banner-layout"><div class="banner-copy"><p class="banner-kicker"></p><h2></h2><p class="banner-description"></p><a class="banner-cta" target="_blank" rel="noopener noreferrer"></a></div><div class="banner-brand"></div></div><div class="banner-bottom"><nav class="banner-links"></nav><div class="banner-controls"><span class="banner-count" aria-live="off"></span><button type="button" class="banner-pause"></button></div></div>';
-  const img=document.createElement('img');img.src='assets/modern/fabio-schnorr.png';img.alt='Fábio Schnorr, em fotografia institucional do escritório';img.decoding='async';banner.querySelector('.banner-brand').append(img);
-  document.querySelector('main').prepend(banner);
-  function stop(){if(timer!==null){clearInterval(timer);timer=null;}}
-  function schedule(){stop();if(!paused&&!hover&&!focused&&!document.hidden)timer=setInterval(()=>show(index+1),2000);}
-  function show(next){
-    index=(next+slides.length)%slides.length;const l=language(),w=ui[l],[k,h,d,c]=slides[index].text[l];
-    banner.dataset.palette=String(index);banner.setAttribute('aria-label',w.region);banner.querySelector('.banner-topline').textContent=w.free;
-    banner.querySelector('.banner-kicker').textContent=k;banner.querySelector('h2').textContent=h;banner.querySelector('.banner-description').textContent=d;
-    const a=banner.querySelector('.banner-cta');a.textContent=c;a.href=slides[index].url;
-    
-    const count=banner.querySelector('.banner-count');count.replaceChildren(...slides.map((_,i)=>{const dot=document.createElement('i');if(i===index)dot.className='active';dot.setAttribute('aria-hidden','true');return dot;}));count.setAttribute('aria-label',w.slide+' '+(index+1)+' / '+slides.length);
-    const pause=banner.querySelector('.banner-pause');pause.textContent=paused?w.play:w.pause;pause.setAttribute('aria-pressed',String(paused));
-    const links=banner.querySelector('.banner-links');links.setAttribute('aria-label',w.region);links.replaceChildren();
-    for(const [label,url] of [[w.instagram,'https://www.instagram.com/advschnorr/'],[w.website,'https://advschnorr.com.br/'],[w.contact,'https://advschnorr.com.br/#atendimento']]){const link=document.createElement('a');link.textContent=label;link.href=url;link.target='_blank';link.rel='noopener noreferrer';links.append(link);}
-  }
-  banner.querySelector('.banner-pause').addEventListener('click',()=>{paused=!paused;show(index);schedule();});
-  banner.addEventListener('mouseenter',()=>{hover=true;stop();});banner.addEventListener('mouseleave',()=>{hover=false;schedule();});
-  banner.addEventListener('focusin',()=>{focused=true;stop();});banner.addEventListener('focusout',e=>{focused=banner.contains(e.relatedTarget);schedule();});
-  document.addEventListener('visibilitychange',schedule);reduced.addEventListener('change',e=>{if(e.matches)paused=true;show(index);schedule();});
-  new MutationObserver(()=>show(index)).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
-  show(0);schedule();
+'use strict';
+const slides=__SCHNORR_BANNER_SLIDES__;
+const ui={pt:{region:'Divulgação institucional Schnorr',free:'Ferramenta gratuita · Uma iniciativa Schnorr',pause:'Pausar rotação',play:'Retomar rotação',slide:'Banner',website:'Site do escritório',contact:'Contato',instagram:'Instagram',illustration:'Imagem ilustrativa'},en:{region:'Schnorr institutional information',free:'Free tool · A Schnorr initiative',pause:'Pause rotation',play:'Resume rotation',slide:'Banner',website:'Firm website',contact:'Contact',instagram:'Instagram',illustration:'Illustrative image'},es:{region:'Información institucional Schnorr',free:'Herramienta gratuita · Una iniciativa Schnorr',pause:'Pausar rotación',play:'Reanudar rotación',slide:'Banner',website:'Sitio del despacho',contact:'Contacto',instagram:'Instagram',illustration:'Imagen ilustrativa'}};
+const reduced=matchMedia('(prefers-reduced-motion: reduce)');let index=0,paused=reduced.matches,timer=null,focused=false;
+const lang=()=>document.documentElement.lang.startsWith('en')?'en':document.documentElement.lang.startsWith('es')?'es':'pt';
+const banner=document.createElement('aside');banner.className='schnorr-banner';banner.dataset.campaign='photos-v3';banner.setAttribute('aria-roledescription','carousel');
+banner.innerHTML='<div class="banner-backdrop" aria-hidden="true"></div><div class="banner-brand"><img decoding="async"></div><div class="banner-shade" aria-hidden="true"></div><div class="banner-front"><div class="banner-topline"></div><div class="banner-layout"><div class="banner-copy"><p class="banner-kicker"></p><h2></h2><p class="banner-description"></p><a class="banner-cta" target="_blank" rel="noopener noreferrer"></a></div></div><div class="banner-bottom"><nav class="banner-links"></nav><div class="banner-controls"><span class="banner-count" aria-live="off"></span><button type="button" class="banner-pause"></button></div></div></div><span class="banner-illustration"></span>';
+document.querySelector('main').prepend(banner);
+const image=banner.querySelector('.banner-brand img'),links=banner.querySelector('.banner-links');
+for(const [key,url] of [['instagram','https://www.instagram.com/advschnorr/'],['website','https://advschnorr.com.br/'],['contact','https://advschnorr.com.br/#atendimento']]){const a=document.createElement('a');a.dataset.label=key;a.href=url;a.target='_blank';a.rel='noopener noreferrer';links.append(a);}
+const preload=new Set();function warm(i){const s=slides[i%slides.length];if(preload.has(s.image))return;preload.add(s.image);const im=new Image();im.src=s.image;}
+function stop(){if(timer!==null){clearInterval(timer);timer=null;}}
+function schedule(){stop();if(!paused&&!focused&&!document.hidden)timer=setInterval(()=>show(index+1),2000);}
+function show(next){
+ index=(next+slides.length)%slides.length;const s=slides[index],l=lang(),w=ui[l],[k,h,d,c]=s.text[l];
+ banner.dataset.slideId=s.id;banner.dataset.kind=s.kind;banner.style.setProperty('--campaign-color',s.color);banner.style.setProperty('--campaign-position',s.position);banner.style.setProperty('--campaign-fit',s.fit);banner.setAttribute('aria-label',w.region);
+ banner.querySelector('.banner-topline').textContent=w.free;banner.querySelector('.banner-kicker').textContent=k;banner.querySelector('h2').textContent=h;banner.querySelector('.banner-description').textContent=d;
+ const cta=banner.querySelector('.banner-cta');cta.textContent=c;cta.href=s.url;
+ image.src=s.image;image.alt=s.alt;banner.querySelector('.banner-backdrop').style.backgroundImage='url("'+s.image+'")';
+ const count=banner.querySelector('.banner-count');count.replaceChildren(...slides.map((_,i)=>{const b=document.createElement('i');if(i===index)b.className='active';b.setAttribute('aria-hidden','true');return b;}));count.setAttribute('aria-label',w.slide+' '+(index+1)+' / '+slides.length);
+ const pause=banner.querySelector('.banner-pause');pause.textContent=paused?w.play:w.pause;pause.setAttribute('aria-pressed',String(paused));
+ links.setAttribute('aria-label',w.region);links.querySelectorAll('a').forEach(a=>a.textContent=w[a.dataset.label]);banner.querySelector('.banner-illustration').textContent=s.illustration?w.illustration:'';
+ warm(index+1);
+}
+banner.querySelector('.banner-pause').addEventListener('click',()=>{paused=!paused;show(index);schedule();});
+banner.addEventListener('focusin',()=>{focused=true;stop();});banner.addEventListener('focusout',e=>{focused=banner.contains(e.relatedTarget);schedule();});
+document.addEventListener('visibilitychange',schedule);reduced.addEventListener('change',e=>{if(e.matches)paused=true;show(index);schedule();});new MutationObserver(()=>show(index)).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});show(0);schedule();
 })();
